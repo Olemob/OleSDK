@@ -1,0 +1,8 @@
+<resources>
+
+    <string name="app_name">OleSDK Demo</string>
+    <string name="ole_account_guest_name">游客%1$d</string>
+    <string name="ole_account_guest_success">游客%1$d登录成功</string>
+    <string name="ole_account_login_success">%s登录成功</string>
+
+</resources>

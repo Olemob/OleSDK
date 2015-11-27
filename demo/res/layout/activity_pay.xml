@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:background="#ededed"
+            android:padding="4dp"
+            android:text="输入用户ID"/>
+
+        <EditText
+            android:id="@+id/main_product_uid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="用户uid"
+            android:inputType="number"
+            android:singleLine="true"
+            android:text="1234"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:layout_marginTop="8dp"
+            android:background="#ededed"
+            android:padding="4dp"
+            android:text="输入商品名称"/>
+
+        <EditText
+            android:id="@+id/main_product_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="商品名称"
+            android:singleLine="true"
+            android:text="测试商品"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:layout_marginTop="8dp"
+            android:background="#ededed"
+            android:padding="4dp"
+            android:text="输入价格 / 选择币种"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/main_product_price"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="商品价格"
+                android:inputType="numberDecimal"
+                android:singleLine="true"
+                android:text="1.0"/>
+
+            <!-- 支付币种 -->
+
+            <Spinner
+                android:id="@+id/main_product_currency"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:spinnerMode="dropdown"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/main_product_start_pay"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="开始支付"
+                android:textSize="12sp"/>
+
+            <Button
+                android:id="@+id/main_product_checkpay_status"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="4dp"
+                android:text="查询支付状态"
+                android:textSize="12sp"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/main_product_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="#ababab"
+            android:minHeight="100dp"
+            android:padding="4dp"
+            android:text="结果输出"
+            android:textColor="#FFFFFF"/>
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,353 @@
+<manifest package="com.olemob.sdk.demo"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Halo权限设置-->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+
+    <!-- iAppPay权限设置-->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <!-- sms pay 短信代扣权限 -->
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+
+    <!-- bank 卡支付 -->
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.GET_PACKAGE_SIZE"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+
+    <!-- 易联2.0 基础权限 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+
+    <!-- 易联2.0  照相的权限 -->
+    <uses-feature android:name="android.hardware.camera"/>
+
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.hardware.camera.autofocus"/>
+
+    <!-- 易联2.0  录像需要的权限 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.RECORD_VIDEO"/>
+
+    <application android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="com.olemob.sdk.demo.UserAccountActivity"
+            android:configChanges="screenSize|orientation|keyboard|navigation|layoutDirection"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.olemob.sdk.demo.PayActivity"
+            android:configChanges="screenSize|orientation|keyboard|navigation|layoutDirection"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <!-- 用户SDK登录页面 -->
+        <activity
+            android:name="com.olemob.accountsdk.AccountSdkFragmentActivity"
+            android:configChanges="screenSize|orientation|keyboard|navigation|layoutDirection"
+            android:exported="true"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar">
+        </activity>
+
+        <!-- 友盟第三方登录 START -->
+        <!-- 友盟第三方登录, UMENG_APPKEY不需要修改 -->
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="5567fc3f67e58ee7af0032b4">
+        </meta-data>
+
+        <activity
+            android:name="com.umeng.socialize.view.ShareActivity"
+            android:configChanges="screenSize|orientation|keyboard|navigation|layoutDirection"
+            android:launchMode="singleTask"
+            android:noHistory="true"
+            android:theme="@style/Theme.UMDialog"
+            android:windowSoftInputMode="stateVisible|adjustResize"/>
+        <!-- 友盟第三方登录 END -->
+        <!-- OlePay支付Activity声明 START -->
+        <!--&lt;!&ndash; 登录界面 &ndash;&gt;-->
+        <!--<activity-->
+        <!--android:name="com.halopay.openid.channel.ui.LoginActivity"-->
+        <!--android:configChanges="screenSize|orientation|keyboard|navigation|layoutDirection"-->
+        <!--android:launchMode="singleTask">-->
+        <!--</activity>-->
+        <!--&lt;!&ndash; 注册界面 &ndash;&gt;-->
+        <!--<activity-->
+        <!--android:name="com.halopay.openid.channel.ui.RegistActivity"-->
+        <!--android:configChanges="screenSize|orientation|keyboard|navigation|layoutDirection"-->
+        <!--android:launchMode="singleTask">-->
+        <!--</activity>-->
+        <!--&lt;!&ndash; 注册协议界面 &ndash;&gt;-->
+        <!--<activity-->
+        <!--android:name="com.halopay.openid.channel.ui.RegisterProtocolActivity"-->
+        <!--android:configChanges="screenSize|orientation|keyboard|navigation|layoutDirection">-->
+        <!--</activity>-->
+        <!--&lt;!&ndash; 忘记密码界面 &ndash;&gt;-->
+        <!--<activity-->
+        <!--android:name="com.halopay.openid.channel.ui.ForgotPasswordActivity"-->
+        <!--android:configChanges="screenSize|orientation|keyboard|navigation|layoutDirection"-->
+        <!--android:launchMode="singleTask">-->
+        <!--</activity>-->
+        <!--<activity-->
+        <!--android:name="com.halopay.openid.channel.ui.ForgotSetPwdActivity"-->
+        <!--android:configChanges="screenSize|orientation|keyboard|navigation|layoutDirection"-->
+        <!--android:launchMode="singleTask">-->
+        <!--</activity>-->
+
+        <!--&lt;!&ndash; 显示网页界面 &ndash;&gt;-->
+        <!--<activity-->
+        <!--android:name="com.halopay.openid.channel.ui.WebActivity"-->
+        <!--android:configChanges="screenSize|orientation|keyboard|navigation|layoutDirection"-->
+        <!--android:launchMode="singleInstance">-->
+        <!--</activity>-->
+
+        <!--&lt;!&ndash; 收银台-普通 &ndash;&gt;-->
+        <!--<activity-->
+        <!--android:name="com.halopay.ui.activity.normalpay.PayHubActivity"-->
+        <!--android:configChanges="screenSize|orientation|keyboard|navigation|layoutDirection"-->
+        <!--android:theme="@android:style/Theme.Translucent.NoTitleBar">-->
+        <!--</activity>-->
+        <!--&lt;!&ndash; 收银台-爱贝币 &ndash;&gt;-->
+        <!--<activity-->
+        <!--android:name="com.halopay.ui.activity.iapppay.IAppPayHubActivity"-->
+        <!--android:configChanges="screenSize|orientation|keyboard|navigation|layoutDirection"-->
+        <!--android:launchMode="singleTask"-->
+        <!--android:theme="@android:style/Theme.Translucent">-->
+        <!--</activity>-->
+
+        <!--&lt;!&ndash; 充值界面 &ndash;&gt;-->
+        <!--<activity-->
+        <!--android:name="com.halopay.ui.activity.normalpay.ChargeActivity"-->
+        <!--android:configChanges="screenSize|orientation|keyboard|navigation|layoutDirection"-->
+        <!--android:launchMode="singleTask">-->
+        <!--</activity>-->
+        <!--&lt;!&ndash; 用户选择设置界面 &ndash;&gt;-->
+        <!--<activity-->
+        <!--android:name="com.halopay.ui.activity.SelectSettingsActivity"-->
+        <!--android:configChanges="screenSize|orientation|keyboard|navigation|layoutDirection"-->
+        <!--android:launchMode="standard"-->
+        <!--android:theme="@android:style/Theme.Light.NoTitleBar">-->
+        <!--</activity>-->
+        <!--&lt;!&ndash; 用户输入金额充值界面 &ndash;&gt;-->
+        <!--<activity-->
+        <!--android:name="com.halopay.ui.activity.PutAmountForChargeActivity"-->
+        <!--android:configChanges="screenSize|orientation|keyboard|navigation|layoutDirection"-->
+        <!--android:launchMode="standard"-->
+        <!--android:theme="@android:style/Theme.Light.NoTitleBar">-->
+        <!--</activity>-->
+        <!--&lt;!&ndash; 分组弹出页面 &ndash;&gt;-->
+        <!--<activity-->
+        <!--android:name="com.halopay.ui.activity.normalpay.PayTypeGroupsActivity"-->
+        <!--android:configChanges="screenSize|orientation|keyboard|navigation|layoutDirection"-->
+        <!--android:launchMode="standard"-->
+        <!--android:theme="@android:style/Theme.Light.NoTitleBar">-->
+        <!--</activity>-->
+        <!--&lt;!&ndash; 填卡信息页面 &ndash;&gt;-->
+        <!--<activity-->
+        <!--android:name="com.halopay.ui.activity.normalpay.CardInfoActivity"-->
+        <!--android:configChanges="screenSize|orientation|keyboard|navigation|layoutDirection"-->
+        <!--android:launchMode="standard"-->
+        <!--android:theme="@android:style/Theme.Light.NoTitleBar">-->
+        <!--</activity>-->
+        <!-- OlePay支付Activity声明 END -->
+
+        <!--&lt;!&ndash; Iapppay的Activity声明（iAppPay国内版）START&ndash;&gt;-->
+        <!--&lt;!&ndash; 微支付SDK界面 &ndash;&gt;-->
+        <!--&lt;!&ndash; 登录界面 &ndash;&gt;-->
+        <!--<activity-->
+        <!--android:name="com.iapppay.openid.channel.ipay.ui.LoginActivity"-->
+        <!--android:configChanges="screenSize|orientation|keyboard|navigation|layoutDirection"-->
+        <!--android:launchMode="singleTask">-->
+        <!--</activity>-->
+        <!--&lt;!&ndash; 注册界面 &ndash;&gt;-->
+        <!--<activity-->
+        <!--android:name="com.iapppay.openid.channel.ipay.ui.RegistActivity"-->
+        <!--android:configChanges="screenSize|orientation|keyboard|navigation|layoutDirection"-->
+        <!--android:launchMode="singleTask">-->
+        <!--</activity>-->
+        <!--&lt;!&ndash; 注册界面 》设置登录支付密码 &ndash;&gt;-->
+        <!--<activity-->
+        <!--android:name="com.iapppay.openid.channel.ipay.ui.RegSetPwdActivity"-->
+        <!--android:configChanges="screenSize|orientation|keyboard|navigation|layoutDirection"-->
+        <!--android:launchMode="singleTask">-->
+        <!--</activity>-->
+        <!--&lt;!&ndash; 显示网页界面 &ndash;&gt;-->
+        <!--<activity-->
+        <!--android:name="com.iapppay.openid.channel.ipay.ui.WebActivity"-->
+        <!--android:configChanges="screenSize|orientation|keyboard|navigation|layoutDirection"-->
+        <!--android:launchMode="singleInstance">-->
+        <!--</activity>-->
+        <!--<activity-->
+        <!--android:name="com.iapppay.ui.activity.AccountCheckPasswordActivity"-->
+        <!--android:configChanges="screenSize|orientation|keyboard|navigation|layoutDirection"/>-->
+        <!--<activity-->
+        <!--android:name="com.iapppay.pay.channel.weixinpay.WeixinWapPayActivity"-->
+        <!--android:configChanges="screenSize|orientation|keyboard|navigation|layoutDirection"-->
+        <!--android:theme="@android:style/Theme.Translucent"/>-->
+        <!--<activity-->
+        <!--android:name="com.iapppay.ui.activity.AccountModifyPasswordActivity"-->
+        <!--android:configChanges="screenSize|orientation|keyboard|navigation|layoutDirection"/>-->
+        <!--<activity-->
+        <!--android:name="com.iapppay.ui.activity.AccountSmallAmountPasswordActivity"-->
+        <!--android:configChanges="screenSize|orientation|keyboard|navigation|layoutDirection"/>-->
+        <!--<activity-->
+        <!--android:name="com.iapppay.ui.activity.AccountSmallAmountValueActivty"-->
+        <!--android:configChanges="screenSize|orientation|keyboard|navigation|layoutDirection"/>-->
+        <!--<activity-->
+        <!--android:name="com.iapppay.ui.activity.ServiceCenterActivity"-->
+        <!--android:configChanges="screenSize|orientation|keyboard|navigation|layoutDirection"/>-->
+        <!--<activity-->
+        <!--android:name="com.iapppay.fastpay.ui.InputBankCarNoActivity"-->
+        <!--android:launchMode="singleTask">-->
+        <!--</activity>-->
+        <!--<activity-->
+        <!--android:name="com.iapppay.fastpay.ui.InputBankCarMoreInfoActivity"-->
+        <!--android:launchMode="singleTask">-->
+        <!--</activity>-->
+        <!--<activity-->
+        <!--android:name="com.iapppay.fastpay.ui.VerificationCodeActivity"-->
+        <!--android:launchMode="singleTask">-->
+        <!--</activity>-->
+        <!--<activity android:name="com.iapppay.fastpay.ui.CommonWebActivity">-->
+        <!--</activity>-->
+
+        <!--&lt;!&ndash; 收银台-普通 &ndash;&gt;-->
+        <!--<activity-->
+        <!--android:name="com.iapppay.ui.activity.normalpay.PayHubActivity"-->
+        <!--android:configChanges="screenSize|orientation|keyboard|navigation|layoutDirection"-->
+        <!--android:theme="@android:style/Theme.Translucent.NoTitleBar">-->
+        <!--</activity>-->
+        <!--&lt;!&ndash; 收银台-爱贝快付 &ndash;&gt;-->
+        <!--<activity-->
+        <!--android:name="com.iapppay.ui.activity.minipay.MiniPayHubActivity"-->
+        <!--android:configChanges="screenSize|orientation|keyboard|navigation|layoutDirection"-->
+        <!--android:launchMode="singleTask"-->
+        <!--android:theme="@android:style/Theme.Translucent">-->
+        <!--</activity>-->
+        <!--&lt;!&ndash; 收银台-爱贝币 &ndash;&gt;-->
+        <!--<activity-->
+        <!--android:name="com.iapppay.ui.activity.iapppay.IAppPayHubActivity"-->
+        <!--android:configChanges="screenSize|orientation|keyboard|navigation|layoutDirection"-->
+        <!--android:launchMode="singleTask"-->
+        <!--android:theme="@android:style/Theme.Translucent">-->
+        <!--</activity>-->
+
+        <!--&lt;!&ndash; 选择充值金额界面 &ndash;&gt;-->
+        <!--<activity-->
+        <!--android:name="com.iapppay.ui.activity.SelectAmountActivity"-->
+        <!--android:configChanges="screenSize|orientation|keyboard|navigation|layoutDirection"-->
+        <!--android:launchMode="singleTask">-->
+        <!--</activity>-->
+        <!--<activity-->
+        <!--android:name="com.iapppay.ui.activity.minipay.BankCardActivity"-->
+        <!--android:configChanges="screenSize|orientation|keyboard|navigation|layoutDirection"/>-->
+        <!--<activity-->
+        <!--android:name="com.iapppay.ui.activity.normalpay.ChargeActivity"-->
+        <!--android:configChanges="screenSize|orientation|keyboard|navigation|layoutDirection"-->
+        <!--android:launchMode="singleTask">-->
+        <!--</activity>-->
+        <!--&lt;!&ndash; 游戏卡和话费卡界面 &ndash;&gt;-->
+        <!--<activity-->
+        <!--android:name="com.iapppay.pay.channel.gamepay.GamepayActivity"-->
+        <!--android:configChanges="screenSize|orientation|keyboard|navigation|layoutDirection"-->
+        <!--android:launchMode="singleTask">-->
+        <!--</activity>-->
+        <!--&lt;!&ndash; 银联支付结果返回 &ndash;&gt;-->
+        <!--<activity-->
+        <!--android:name="com.iapppay.pay.channel.unionpay.UpPayResultActivity"-->
+        <!--android:configChanges="orientation|keyboardHidden"-->
+        <!--android:theme="@android:style/Theme.Translucent"/>-->
+        <!--&lt;!&ndash; 易联2.0支付结果返回 &ndash;&gt;-->
+        <!--<activity-->
+        <!--android:name="com.iapppay.pay.channel.ecopay2.EcoPay2ResultActivity"-->
+        <!--android:configChanges="orientation|keyboardHidden"-->
+        <!--android:theme="@android:style/Theme.Translucent"/>-->
+
+        <!--&lt;!&ndash; alipay sdk begin (新的支付宝) &ndash;&gt;-->
+        <!--<activity-->
+        <!--android:name="com.alipay.sdk.app.H5PayActivity"-->
+        <!--android:configChanges="orientation|keyboardHidden|navigation"-->
+        <!--android:exported="false"-->
+        <!--android:screenOrientation="behind"-->
+        <!--android:windowSoftInputMode="adjustResize|stateHidden">-->
+        <!--</activity>-->
+        <!--&lt;!&ndash; alipay sdk end &ndash;&gt;-->
+
+        <!--&lt;!&ndash; 财付通wap start&ndash;&gt;-->
+        <!--<activity-->
+        <!--android:name="com.iapppay.pay.channel.tenpay.wap.TenpayWapPayActivity"-->
+        <!--android:configChanges="screenSize|orientation|keyboard|navigation|layoutDirection"-->
+        <!--android:theme="@android:style/Theme.Translucent"/>-->
+        <!--<activity-->
+        <!--android:name="com.iapppay.pay.channel.tenpay.wap.WebActivity"-->
+        <!--android:configChanges="screenSize|orientation|keyboard|navigation|layoutDirection">-->
+        <!--</activity>-->
+        <!--&lt;!&ndash; 财付通wap end&ndash;&gt;-->
+
+        <!--&lt;!&ndash; 银联3.1.0 start &ndash;&gt;-->
+        <!--<activity-->
+        <!--android:name="com.unionpay.uppay.PayActivity"-->
+        <!--android:configChanges="orientation|keyboardHidden|screenSize"-->
+        <!--android:excludeFromRecents="true"-->
+        <!--android:label="@string/app_name"-->
+        <!--android:screenOrientation="portrait"/>-->
+        <!--&lt;!&ndash; 银联3.1.0 end &ndash;&gt;-->
+
+        <!--&lt;!&ndash; 易联2.0 start &ndash;&gt;-->
+        <!--&lt;!&ndash; 插件入口界面 &ndash;&gt;-->
+        <!--<activity-->
+        <!--android:name="com.payeco.android.plugin.PayecoPluginLoadingActivity"-->
+        <!--android:launchMode="singleTask"-->
+        <!--android:screenOrientation="portrait"/>-->
+        <!--&lt;!&ndash; 插件拍照界面 &ndash;&gt;-->
+        <!--<activity-->
+        <!--android:name="com.payeco.android.plugin.PayecoCameraActivity"-->
+        <!--android:screenOrientation="portrait"/>-->
+        <!--&lt;!&ndash; 插件录像界面 &ndash;&gt;-->
+        <!--<activity-->
+        <!--android:name="com.payeco.android.plugin.PayecoVedioActivity"-->
+        <!--android:process="com.payeco.android.plugin.vedio"-->
+        <!--android:screenOrientation="landscape"/>-->
+        <!--&lt;!&ndash; 易联2.0 end &ndash;&gt;-->
+        <!--&lt;!&ndash;Iapppay的Activity声明（国内版）END&ndash;&gt;-->
+
+        <!--Payssion的Activity声明 START -->
+        <activity
+            android:name="com.payssion.android.sdk.PayssionActivity"
+            android:label="app_name"
+            android:theme="@style/Transparent"/>
+        <activity
+            android:name="com.payssion.android.sdk.PaymentPageActivity"
+            android:label="app_name"/>
+        <activity
+            android:name="com.payssion.android.sdk.PaymentWebActivity"
+            android:label="app_name"/>
+        <!--Payssion的Activity声明 END -->
+    </application>
+
+</manifest>
